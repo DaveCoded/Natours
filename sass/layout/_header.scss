@@ -1,0 +1,43 @@
+.header {
+	/* 95% of the viewport height. vh changes dimensions dynamically with the window */
+	height: 95vh;
+	/* Gradients always defined in background-image. First image goes on top of second */
+	background-image: linear-gradient(to right bottom,
+	rgba($color-primary-light, 0.8),
+	rgba($color-primary-dark, 0.8)),
+	url(../img/hero.jpg);
+	/* Fits image inside box no matter size of viewport / element */
+	background-size: cover;
+	/* Keeps top of image no matter size of viewport; crops the bottom as required */
+	background-position: top;
+	position: relative;
+
+	/* Specify x and y of every corner, starting with top-left, going clockwise */
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+	@include respond(phone) {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+	}
+
+	&__logo-box {
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
+	}
+	
+	&__logo {
+		height: 3.5rem;
+	}
+	
+	&__text-box {
+		position: absolute;
+		/* Places box's top left corner in center of parent element. Height not centered because of missing wedge */
+		top: 40%;
+		left: 50%;
+		/* Shifts box 50% of its OWN height and width, so now center of box is centered in parent element */
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+}
