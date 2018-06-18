@@ -35,12 +35,6 @@
         }
     }
 
-    &__input:focus {
-        outline: none;
-        box-shadow: 0 1rem 2rem rgba($color-black, .1);
-        border-bottom: 3px solid $color-primary;
-    }
-
     &__label {
         font-size: 1.2rem;
         font-weight: 700;

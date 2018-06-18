@@ -10,10 +10,15 @@
 
     &__logo-box {
         text-align: center; // Inline elements behave just like text!
+        margin-bottom: 8rem;
     }
 
     &__logo {
         width: 15rem;
+
+        @include respond(tab-port) {
+            margin-bottom: 6rem;
+        }
     }
 
     &__navigation {
