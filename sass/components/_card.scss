@@ -17,6 +17,7 @@
 		left: 0;
 		width: 100%;
 		// No longer be able to see back of each side (with the text on the other side and reversed)
+		-webkit-backface-visibility: hidden; //support in Safari
 		backface-visibility: hidden;
 		border-radius: $border-radius;
 		overflow: hidden; // Image overflows the card and therefore takes away rounded corner. This is an easy fix!!
